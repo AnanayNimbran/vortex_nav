@@ -1,3 +1,4 @@
+
 from launch import LaunchDescription
 from launch_ros.actions import Node
 from launch.actions import IncludeLaunchDescription
@@ -82,12 +83,12 @@ def generate_launch_description():
                 ('scan', '/scan'),
             ],
         ),
-        # #Node(
-        #     package='tf2_ros',
-        #     executable='static_transform_publisher',
-        #     arguments=['0', '0', '0', '0', '0', '0', 'map', 'odom'],
-        #     name='static_tf_odom'
-        #),
+        Node(
+            package='tf2_ros',
+            executable='static_transform_publisher',
+            arguments=['0', '0', '0', '0', '0', '0', 'map', 'odom'],
+            name='static_tf_odom'
+        ),
         Node(
             package='lirovo',
             executable='mavros_bridge',
@@ -102,20 +103,20 @@ def generate_launch_description():
             ),
             launch_arguments={
                 'topic': '/bf_lidar/point_cloud_out', # <--- REPLACE WITH YOUR BAG'S PC2 TOPIC
-                'publish_odom_tf': 'false',            # Let EKF handle the TF
+                'publish_odom_tf': 'true',            # Let EKF handle the TF
                 'use_sim_time': 'false'
             }.items()
         ),
-        #vins
-        # IncludeLaunchDescription(
-        # PythonLaunchDescriptionSource(
-        #     os.path.join(get_package_share_directory('vins'), 'launch', 'euroc.launch.py')
-        # ),
-        # launch_arguments={
-        #     # If you want to use a different config than the default in that file:
-        #     'config_path': os.path.join(get_package_share_directory('vins'), 'config', 'realsense_d435i', 'realsense_stereo_imu_config.yaml')
-        # }.items()
-        # ), 
+      #  vins
+        IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(get_package_share_directory('vins'), 'launch', 'euroc.launch.py')
+        ),
+        launch_arguments={
+            # If you want to use a different config than the default in that file:
+            'config_path': os.path.join(get_package_share_directory('vins'), 'config', 'realsense_d435i', 'realsense_stereo_imu_config.yaml')
+        }.items()
+        ), 
         
         Node(
         package='robot_localization',
@@ -131,7 +132,7 @@ def generate_launch_description():
         #     executable='navigator',
         #     name='navigator',
         #     output='screen',
-        #     parameters=[{'use_sim_time':true}] #False
+        #     parameters=[{'use_sim_time':True}] #False
         # ),
         # Node(
         #     package='lirovo',
@@ -166,7 +167,7 @@ def generate_launch_description():
                 {'use_sim_time':False} # This MUST be a separate dictionary entry
             ],
             # HARD OVERRIDE: Force it at the command line level
-            arguments=['--ros-args', '-p', 'use_sim_time:=true'] 
+            arguments=['--ros-args', '-p', 'use_sim_time:=False'] 
         ),
     ]
     ),

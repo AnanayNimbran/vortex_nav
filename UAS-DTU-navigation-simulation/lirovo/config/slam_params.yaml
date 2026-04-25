@@ -12,13 +12,13 @@ slam_toolbox:
     # ROS Parameters
     odom_frame: odom
     map_frame: map
-    base_frame: lidar
+    base_frame: base_link
     scan_topic: /scan
     odom_topic: /genz/odometry
     use_map_saver: true
     mode: mapping #localization
     use_sim_time: false #False
-    #publish_tf:   #False ............aise hi true kiya dekhne ke liye kya hota hai
+    publish_tf: false ............aise hi true kiya dekhne ke liye kya hota hai
     #publish_tf_map: True
 
     # if you'd like to immediately start continuing a map at a given pose

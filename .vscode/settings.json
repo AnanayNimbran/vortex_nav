@@ -1,0 +1,29 @@
+{
+    "ROS2.distro": "humble",
+    "python.autoComplete.extraPaths": [
+        "/home/vortex/uas_nav/install/slam_toolbox/local/lib/python3.10/dist-packages",
+        "/home/vortex/uas_nav/install/lirovo/lib/python3.10/site-packages",
+        "/home/vortex/uas_nav/install/robot_localization/local/lib/python3.10/dist-packages",
+        "/home/vortex/uas_nav/install/dwb_msgs/local/lib/python3.10/dist-packages",
+        "/home/vortex/uas_nav/install/nav_2d_msgs/local/lib/python3.10/dist-packages",
+        "/home/vortex/uas_nav/install/nav2_simple_commander/lib/python3.10/site-packages",
+        "/home/vortex/uas_nav/install/nav2_msgs/local/lib/python3.10/dist-packages",
+        "/home/vortex/uas_nav/install/nav2_common/local/lib/python3.10/dist-packages",
+        "/home/vortex/uas_nav/install/blickfeld_driver/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/vortex/uas_nav/install/slam_toolbox/local/lib/python3.10/dist-packages",
+        "/home/vortex/uas_nav/install/lirovo/lib/python3.10/site-packages",
+        "/home/vortex/uas_nav/install/robot_localization/local/lib/python3.10/dist-packages",
+        "/home/vortex/uas_nav/install/dwb_msgs/local/lib/python3.10/dist-packages",
+        "/home/vortex/uas_nav/install/nav_2d_msgs/local/lib/python3.10/dist-packages",
+        "/home/vortex/uas_nav/install/nav2_simple_commander/lib/python3.10/site-packages",
+        "/home/vortex/uas_nav/install/nav2_msgs/local/lib/python3.10/dist-packages",
+        "/home/vortex/uas_nav/install/nav2_common/local/lib/python3.10/dist-packages",
+        "/home/vortex/uas_nav/install/blickfeld_driver/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}
